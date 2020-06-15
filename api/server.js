@@ -15,4 +15,8 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
+server.get('/', (req, res) => {
+    res.status(200).json({ api:" Build Week is around the corner"});
+});
+
 module.exports = server;
